@@ -1,0 +1,7 @@
+= form_for([material.course, material]) do |f|
+  = render 'common/errors', resource: material
+  .field
+    = f.label :file
+    = f.file_field :file
+  .actions
+    = f.submit

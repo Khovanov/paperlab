@@ -1,0 +1,19 @@
+p#notice= notice
+h1 Materials
+h2= @course.name
+table
+  thead
+    tr
+      th File
+      th colspan="2" Action
+  tbody
+    - @materials.each do |material|
+      tr
+        td= image_tag material.file.url(:thumb)
+        td= link_to 'Edit', edit_course_material_path(material.course,material)
+        td= link_to 'Destroy', course_material_path(material.course,material), 
+            method: :delete, data: { confirm: 'Are you sure?' }                
+br
+= link_to 'New Material', new_course_material_path
+br
+= link_to 'Back', courses_path
