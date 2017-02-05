@@ -1,5 +1,5 @@
 # README
-(simple history)
+(simple installation example)
 
 ## Generate new Rails 5 app with PostgresQL
 ```
@@ -8,7 +8,6 @@ cd paperlab
 rvm --ruby-version use 2.3.3@paperlab --create
 ```
 ### Gemfile
-[Paperclip]: https://github.com/thoughtbot/paperclip
 ```
 gem 'slim'
 gem 'paperclip', '~> 5.0.0'
@@ -64,6 +63,8 @@ end
 `has_many :materials, dependent: :destroy`
 
 ## Generate Paperclip
+[Paperclip](https://github.com/thoughtbot/paperclip)
+
 `rails g paperclip material file`
 
 ### DB
@@ -107,6 +108,8 @@ end
 
 ## Sidekiq
 
+[Sidekiq](https://github.com/mperham/sidekiq)
+
 ### Gemfile + Bundler
 `gem 'sidekiq'`
 
@@ -119,6 +122,9 @@ job = CourseDuplicationJob.perform_later(self)
 job.provider_job_id
 ```
 ## Redis server
+
+[Redis](https://redis.io/)
+
 `sudo apt-get install redis-server`
 
 ### .gitignore
@@ -127,7 +133,9 @@ dump.rdb
 /public/system/
 ```
 ## Foreman
-[Foreman]: https://github.com/ddollar/foreman
+
+[Foreman](https://github.com/ddollar/foreman)
+
 `gem install foreman`
 
 ### /procfile
