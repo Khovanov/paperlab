@@ -34,6 +34,13 @@ class CoursesController < ApplicationController
     redirect_to courses_url, notice: 'Course was successfully destroyed.'
   end
 
+  def duplicate
+    @course = Course.find(params[:course_id])
+    job = @course.duplicate
+    flash[:notice] = "Task with job ID #{job} for course duplication add to workers queue"
+    redirect_to courses_url
+  end
+
   private
     def set_course
       @course = Course.find(params[:id])

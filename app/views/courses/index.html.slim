@@ -4,12 +4,13 @@ table
   thead
     tr
       th Name
-      th colspan="3" Action
+      th colspan="4" Action
   tbody
     - @courses.each do |course|
       tr
         td= course.name
         td= link_to 'Edit', edit_course_path(course)
+        td= link_to 'Duplicate', course_duplicate_path(course), method: :patch
         td= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }
         td= link_to 'Materials', course_materials_path(course)
 br
