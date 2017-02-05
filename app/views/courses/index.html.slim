@@ -1,0 +1,15 @@
+p#notice= notice
+h1 Courses
+table
+  thead
+    tr
+      th Name
+      th colspan="2" Action
+  tbody
+    - @courses.each do |course|
+      tr
+        td= course.name
+        td= link_to 'Edit', edit_course_path(course)
+        td= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } 
+br
+= link_to 'New Course', new_course_path

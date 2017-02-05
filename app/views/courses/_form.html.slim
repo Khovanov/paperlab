@@ -1,0 +1,7 @@
+= form_for(course) do |f|
+  = render 'common/errors', resource: course
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions
+    = f.submit
